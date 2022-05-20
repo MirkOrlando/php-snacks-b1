@@ -34,12 +34,18 @@ $matches = [
 //var_dump(count($matches));
 
 /* ciclo l'array creato e stampo i risultati */
-$a = 0;
+/* $a = 0;
 while ($a < count($matches)) {
     $match = $matches[$a];
     echo $match['home'] . ' - ' . $match['guest'] . ' | ' . $match['pnt_home'] . ' - ' . $match['pnt_guest'];
     echo '<br>';
     $a++;
+} */
+
+for ($i = 0; $i < count($matches); $i++) {
+    $match = $matches[$i];
+    echo $match['home'] . ' - ' . $match['guest'] . ' | ' . $match['pnt_home'] . ' - ' . $match['pnt_guest'];
+    echo '<br>';
 }
 
 ?>
