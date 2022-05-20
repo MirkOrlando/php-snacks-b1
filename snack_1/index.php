@@ -30,4 +30,14 @@ $matches = [
         'pnt_guest' => '63'
     ],
 ];
-var_dump($matches);
+//var_dump($matches);
+//var_dump(count($matches));
+
+/* ciclo l'array creato */
+$a = 0;
+while ($a < count($matches)) {
+    $match = $matches[$a];
+    echo $match['home'] . ' - ' . $match['guest'] . ' | ' . $match['pnt_home'] . ' - ' . $match['pnt_guest'];
+    echo '<br>';
+    $a++;
+}
