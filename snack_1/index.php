@@ -61,12 +61,13 @@ for ($i = 0; $i < count($matches); $i++) {
     <style>
         .container {
             margin: 2rem auto;
-            max-width: 400px;
+            max-width: 200px;
         }
 
         .row {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .col {
@@ -78,6 +79,25 @@ for ($i = 0; $i < count($matches); $i++) {
             display: flex;
             justify-content: space-around;
             text-align: center;
+            border: 1px solid black;
+        }
+
+        .points,
+        .team {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+        }
+
+        .home {
+            background-color: lightblue;
+            width: 50%;
+        }
+
+        .guest {
+            background-color: lightcoral;
+            width: 50%;
         }
     </style>
 </head>
@@ -85,18 +105,33 @@ for ($i = 0; $i < count($matches); $i++) {
 <body>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="home">
-                        <div class="team">TEAM 1</div>
-                        <div class="points"></div>
-                    </div>
-                    <div class="guest">
-                        <div class="team">TEAM 2</div>
-                        <div class="points"></div>
+            <?php
+            for ($i = 0; $i < count($matches); $i++) {
+                $match = $matches[$i];
+            ?>
+                <div class="col">
+                    <div class="card">
+                        <div class="home">
+                            <div class="team">
+                                <?= $match['home'] ?>
+                            </div>
+                            <div class="points">
+                                <?= $match['pnt_home'] ?>
+                            </div>
+                        </div>
+                        <div class="guest">
+                            <div class="team">
+                                <?= $match['guest'] ?>
+                            </div>
+                            <div class="points">
+                                <?= $match['pnt_guest'] ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </body>
