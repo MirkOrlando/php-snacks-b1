@@ -93,18 +93,24 @@ $posts = [
             margin: 1rem;
             width: calc(100% / 12 * 6 - 1rem);
         }
+
+        img {
+            max-width: 100%;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <?php foreach ($posts as $post_date => $posts_content) : ?>
-            <div class="card">
+            <div class="row">
                 <p><?= $post_date ?></p>
                 <?php foreach ($posts_content as $post_content) : ?>
-                    <?php foreach ($post_content as $key => $value) : ?>
-                        <p><strong><?= $key ?>: </strong><?= $value ?></p>
-                    <?php endforeach ?>
+                    <div class="col-2">
+                        <?php foreach ($post_content as $key => $value) : ?>
+                            <p><strong><?= $key ?>: </strong><?= $value ?></p>
+                        <?php endforeach ?>
+                    </div>
                 <?php endforeach ?>
             </div>
         <?php endforeach ?>
