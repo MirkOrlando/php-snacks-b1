@@ -48,6 +48,21 @@ $posts = [
         ]
     ],
 ];
+
+/* 
+    foreach ($posts as $post_date => $posts_content) {
+        //var_dump($posts_content);
+        foreach ($posts_content as $post_content) {
+            //var_dump($post_content);
+            foreach ($post_content as $key => $value) {
+                var_dump($key);
+                var_dump($value);
+            }
+        }
+    }
+*/
+
+
 ?>
 
 <!DOCTYPE html>
@@ -61,10 +76,19 @@ $posts = [
 </head>
 
 <body>
+
     <?php
-    foreach ($posts as $post_date => $value) : ?>
+    foreach ($posts as $post_date => $posts_content) : ?>
         <p><?= $post_date ?></p>
+        <?php
+        foreach ($posts_content as $post_content) : ?>
+            <?php
+            foreach ($post_content as $key => $value) : ?>
+                <p><strong><?php $key ?>: </strong><?php $value ?></p>
+            <?php endforeach ?>
+        <?php endforeach ?>
     <?php endforeach ?>
+
 </body>
 
 </html>
