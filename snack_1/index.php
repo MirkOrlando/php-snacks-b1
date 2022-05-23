@@ -10,41 +10,41 @@ Olimpia Milano - Cantù | 55-60
  */
 
 /* creo l'array delle partite di campionato */
-$matches = [
+$games = [
     [
         'home' => 'Pall. Cantù',
         'guest' => 'Olimpia Milano',
-        'pnt_home' => '55',
-        'pnt_guest' => '60'
+        'pnt_home' => 55,
+        'pnt_guest' => 60
     ],
     [
         'home' => 'Pall. Varese',
-        'guest' => 'Pall. Cantù',
-        'pnt_home' => '59',
-        'pnt_guest' => '72'
+        'guest' => 'Brindisi',
+        'pnt_home' => 59,
+        'pnt_guest' => 72
     ],
     [
         'home' => 'Brescia',
-        'guest' => 'Pall. Cantù',
-        'pnt_home' => '64',
-        'pnt_guest' => '63'
+        'guest' => 'Virtus Bologna',
+        'pnt_home' => 64,
+        'pnt_guest' => 63
     ],
 ];
-//var_dump($matches);
-//var_dump(count($matches));
+//var_dump($games);
+//var_dump(count($games));
 
 /* ciclo l'array creato e stampo i risultati */
 /* $a = 0;
-while ($a < count($matches)) {
-    $match = $matches[$a];
-    echo $match['home'] . ' - ' . $match['guest'] . ' | ' . $match['pnt_home'] . ' - ' . $match['pnt_guest'];
+while ($a < count($games)) {
+    $game = $games[$a];
+    echo $game['home'] . ' - ' . $game['guest'] . ' | ' . $game['pnt_home'] . ' - ' . $game['pnt_guest'];
     echo '<br>';
     $a++;
 } */
 
-for ($i = 0; $i < count($matches); $i++) {
-    $match = $matches[$i];
-    echo $match['home'] . ' - ' . $match['guest'] . ' | ' . $match['pnt_home'] . ' - ' . $match['pnt_guest'];
+for ($i = 0; $i < count($games); $i++) {
+    $game = $games[$i];
+    echo $game['home'] . ' - ' . $game['guest'] . ' | ' . $game['pnt_home'] . ' - ' . $game['pnt_guest'];
     echo '<br>';
 }
 
@@ -106,25 +106,25 @@ for ($i = 0; $i < count($matches); $i++) {
     <div class="container">
         <div class="row">
             <?php
-            for ($i = 0; $i < count($matches); $i++) {
-                $match = $matches[$i];
+            for ($i = 0; $i < count($games); $i++) {
+                $game = $games[$i];
             ?>
                 <div class="col">
                     <div class="card">
                         <div class="home">
                             <div class="team">
-                                <?= $match['home'] ?>
+                                <?= $game['home'] ?>
                             </div>
                             <div class="points">
-                                <?= $match['pnt_home'] ?>
+                                <?= $game['pnt_home'] ?>
                             </div>
                         </div>
                         <div class="guest">
                             <div class="team">
-                                <?= $match['guest'] ?>
+                                <?= $game['guest'] ?>
                             </div>
                             <div class="points">
-                                <?= $match['pnt_guest'] ?>
+                                <?= $game['pnt_guest'] ?>
                             </div>
                         </div>
                     </div>

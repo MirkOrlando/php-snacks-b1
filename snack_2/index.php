@@ -22,10 +22,10 @@ $age = $_GET['age']; //intval($_GET['age']);
 
 $email = $_GET['email'];
 //var_dump($email);
-//var_dump(str_contains($email, '@'), str_contains($email, '.'));
+//var_dump(strpos($email, '@'), strpos($email, '.'));
 
 /* verificare e stampare la risposta */
-if (strlen($name) > 3 && str_contains($email, '@') && str_contains($email, '.') && is_numeric($age)) {
+if (strlen($name) > 3 && strpos($email, '@') && strpos($email, '.') && is_numeric($age)) {
     echo 'accesso consentito';
 } else {
     echo 'accesso negato';
